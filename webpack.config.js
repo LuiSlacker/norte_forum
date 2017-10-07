@@ -8,6 +8,7 @@ module.exports = {
     output: {
         filename: './public/js/app.js'
     },
+    devtool: 'source-map',
     module: {
         loaders: [
             { 

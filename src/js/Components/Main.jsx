@@ -11,35 +11,33 @@ import {
 import Header from './Layout/Header.jsx';
 import Footer from './Layout/Footer.jsx';
 
-import Public from './Pages/Public.jsx';
-import Protected from './Pages/Protected.jsx';
-
-
-
-
-
+import SignUp from './Pages/SignUp.jsx';
+import Login from './Pages/Login.jsx';
+import Home from './Pages/Home.jsx';
+import UserProfile from './Pages/UserProfile.jsx';
+import NewPost from './Pages/NewPost.jsx';
+import Post from './Pages/Post.jsx';
 
 class Main extends React.Component {
-	constructor(){
-	super();
-        this.state = {  isAuthenticated: false  }
-	}
-	
 	render() {
 		return (<main>
-		<Header />
+		<Router>
+			<div>
+				<Header />
+				<div className='custom-container'>
+					<Route path="/" exact component={Home}/>
+
+					<Route path="/signup" component={SignUp}/>
+					<Route path="/login" component={Login}/>
+					
+					<Route path="/profile" component={UserProfile}/>
+
+					<Route path="/newpost" component={NewPost}/>
+					<Route path="/posts/:uid" component={Post}/>
+				</div>
+			</div>
+		</Router>
 		
-		 <Router>
-		    <div>
-		      <ul>
-		        <li><Link to="/public">Public Page</Link></li>
-		        <li><Link to="/protected" >Protected Page</Link></li>
-		      </ul>
-		      <Route path="/public" component={Public}/>
-		      <Route path="/protected" component={Protected}/>
-		      
-		    </div>
-		  </Router>
 		
 		<Footer />
 		</main>);
