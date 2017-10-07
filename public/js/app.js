@@ -35940,8 +35940,6 @@
 	                  'div',
 	                  { className: 'panel-heading' },
 	                  post.title,
-	                  ' - by: ',
-	                  post.user_name,
 	                  _react2['default'].createElement(
 	                    'span',
 	                    { className: 'pull-right' },

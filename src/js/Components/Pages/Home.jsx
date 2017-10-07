@@ -47,7 +47,7 @@ class Home extends React.Component {
       <div className='post-list col-md-6'>
         {this.state.posts.map((post, index) =>
         <article className='panel panel-primary' key={index} onClick={() => this.openPost(post.uid)}>
-          <div className="panel-heading">{post.title} - by: {post.user_name}<span className='pull-right'>{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span></div>
+          <div className="panel-heading">{post.title}<span className='pull-right'>{moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span></div>
           <div className="panel-body">{post.description}</div>
         </article>
         )}
